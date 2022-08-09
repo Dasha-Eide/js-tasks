@@ -3,8 +3,7 @@ alert("I JavaScript!");
 
 //задачи на переменные js
 //task1
-let admin
-, name;
+let admin, name;
 
 name = "John";
 
@@ -21,11 +20,11 @@ let personalUserName = "Dasha";
 //что выведет этот скрипт
 let name = "Ilya";
 
-alert( `hello ${1}` ); // выведет Hello Ilya
+alert(`hello ${1}`); // выведет Hello Ilya
 
-alert( `hello ${"name"}` ); // выведет Hello name
+alert(`hello ${"name"}`); // выведет Hello name
 
-alert( `hello ${name}` ); // выведет Hello Ilya
+alert(`hello ${name}`); // выведет Hello Ilya
 
 //Создайте страницу, которая спрашивает имя у пользователя и выводит его
 let name = prompt("Your name?", "");
