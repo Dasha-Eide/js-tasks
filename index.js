@@ -1,58 +1,58 @@
 //задачи на условное ветвление
 //task1 Если переменная a равна 10, то выведите 'Верно', иначе выведите 'Неверно'.  
 let a = 10;
-if (a == 10) {
-  alert ("True");
+if (a === 10) {
+  alert("True");
 } else {
-  alert ("False");
+  alert("False");
 }
 
 //task2 В переменной min лежит число от 0 до 59. Определите в какую четверть часа попадает это число (в первую, вторую, третью или четвертую).
 let min = 10;
 if (min >= 0 && min <= 14) {
-  alert ("В первую четверть.");
+  alert("В первую четверть.");
 }
 
-if (min >= 15 && <= 30) {
-  alert ("Во вторую четверть.");
+if else (min >= 15 && <= 30) {
+  alert("Во вторую четверть.");
 }
 
-if (min >= 31 && <= 45) {
-  alert ("В третью четверть.");
+if else (min >= 31 && <= 45) {
+  alert("В третью четверть.");
 }
 
-if (min >= 46 && <= 59) {
-  alert ("В четвертую четверть.");
+if else (min >= 46 && <= 59) {
+  alert("В четвертую четверть.");
 }
 
 //task3 Если переменная a равна нулю, то выведите 'Верно', иначе выведите 'Неверно'. Проверьте работу скрипта при a, равном 1, 0, -3.
 let a = 0;
-if (a == 10) {
+if (a === 10) {
   alert ("True");
 } else {
   alert ("False");
 }
 
-let a = 1;
-if (a == 1) {
+/*let a = 1;
+if (a === 1) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
-let a = 0;
+/*let a = 0;
 if (!a) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
-let a = -3;
-if (a == -3) { 
+/*let a = -3;
+if (a === -3) { 
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
 //task4 Если переменная a больше нуля, то выведите 'Верно', иначе выведите 'Неверно'. Проверьте работу скрипта при a, равном 1, 0, -3.
 let a > 0;
@@ -62,12 +62,12 @@ if (a > 0) {
   alert ("False");
 }
 
-let a = 1;
-if (a == 1) {
+/*let a = 1;
+if (a === 1) {
   alert ("True");
 } else {
   alert ("False");
-}
+}/*
 
 let a = 0;
 if (!a) {
@@ -77,7 +77,7 @@ if (!a) {
 }
 
 let a = -3;
-if (a == -3) { 
+if (a === -3) { 
   alert ("True");
 } else {
   alert ("False");
@@ -93,111 +93,114 @@ if (a > 0 && a < 5) {
   ("False");
 }
 
-let a = 5;
-if (a > 0 && a < 5) {
-  alert ("True");
-} else {
-  alert ("False");
-}
 
-let a = 0;
+/*let a = 5;
 if (a > 0 && a < 5) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
-let a = -3;
+
+/*let a = 0;
 if (a > 0 && a < 5) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
+
+/*let a = -3;
+if (a > 0 && a < 5) {
+  alert ("True");
+} else {
+  alert ("False");
+}*/
 
 //task2 Если переменная a равна нулю или равна двум, то прибавьте к ней 7, иначе поделите ее на 10. Выведите новое значение переменной на экран. Проверьте работу скрипта при a, равном 5, 0, -3, 2.
-let ((a = 0 || a = 2) + 7 / 10));
+let a = 5 + 7;
 if ((!a || a = 2) + 7 / 10)) {
   alert ("True");
 } else {
   alert ("False");
 }
 
-let a = 5;
+/*let a = 5;
 if ((!a || a == 2) + 7 / 10)) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
-let a = 0;
+/*let a = 0;
 if ((!a || a == 2) + 7 / 10)) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
-let a = -3;
-if ((!a || a == 2) + 7 / 10)) {
+/*let a = -3;
+if ((!agg || a == 2) + 7 / 10)) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
-let a = 2;
+/*let a = 2;
 if ((a == 0 || a == 2) + 7 / 10)) {
   alert ("True");
 } else {
   alert ("False");
-}
+}*/
 
 //task3  Если переменная a равна или меньше 1, а переменная b больше или равна 3, то выведите сумму этих переменных, иначе выведите их разность (результат вычитания). Проверьте работу скрипта при a и b, равном 1 и 3, 0 и 6, 3 и 5.
-let a =< 1;
-let b >= 3;
+let a;
+let b;
 
 let showPositiveSum = a + b;
 let showNegativeSum = a - b;
 if (a == 1 || a < 1 && b > 3 || b == 3) {
-  alert ("showPositiveSum");
+  alert(showPositiveSum);
 } else {
-  alert ("showNegativeSum");
+  alert(showNegativeSum);
 }
 
-let a = 1;
+/*let a = 1;
 let b = 3;
 
 let showPositiveSum = a + b;
 let showNegativeSum = a - b;
 if (a == 1 || a < 1 && b > 3 || b == 3) {
-  alert ("showPositiveSum");
+  alert(showPositiveSum);
 } else {
-  alert ("showNegativeSum");
-}
+  alert (showNegativeSum);
+}*/
 
-let a = 0;
+/*let a = 0;
 let b = 6;
 
 let showPositiveSum = a + b;
 let showNegativeSum = a - b;
 if (a == 1 || a < 1 && b > 3 || b == 3) {
-  alert ("showPositiveSum");
+  alert(showPositiveSum);
 } else {
-  alert ("showNegativeSum");
-}
+  alert("showNegativeSum");
+}*/
 
-let a = 3;
+/*let a = 3;
 let b = 5;
 
 let showPositiveSum = a + b;
 let showNegativeSum = a - b;
 if (a == 1 || a < 1 && b > 3 || b == 3) {
-  alert ("showPositiveSum");
+  alert(showPositiveSum);
 } else {
-  alert ("showNegativeSum");
-}
+  alert(showNegativeSum);
+}*/
 
 
 //task4 Если переменная a больше 2-х и меньше 11-ти, или переменная b больше или равна 6-ти и меньше 14-ти, то выведите 'Верно', в противном случае выведите 'Неверно'.
-let ((a > 2 && a < 11) || (b >= 6 && b < 14));
+let = a;
+let = b;
 if ((a > 2 && a < 11) || (b >= 6 && b < 14)) {
   alert ("True");
 } else {
@@ -269,6 +272,5 @@ while (n < 50) {
 }
 alert(n); 
 alert(num);
-
 
 
