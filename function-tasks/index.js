@@ -69,7 +69,7 @@ showWords("I've", "been", "learning", "JavaScript", "for", "a", "month");*/
 
 /*function showWords {
   console.log(arguments);
-  for (i = 0; i < arguments.lenght; i++){
+  for (i = 0; i < arguments.length; i++){
     console.log(arguments[i]);
   }
 }
@@ -86,7 +86,7 @@ complexDigit(3, 6, 7);*/
 
 /*function complexDigit() {
   console.log(arguments);
-  for (i = 0; i < arguments.lenght; i++) {
+  for (i = 0; i < arguments.length; i++) {
     console.log(arguments[i]);
   }
 }
@@ -104,7 +104,7 @@ complexDigit(1, 9, 4, 8, 3);*/
 
 /*function complexDigit() {
   console.log(arguments);
-  for (i = 0; i < arguments.lenght; i++) {
+  for (i = 0; i < arguments.length; i++) {
     console.log(arguments[i]);
   }
 }
@@ -112,7 +112,6 @@ complexDigit(1, 9, 4, 8, 3);*/
 
 //Задача. Есть строка '12346' или '123' или '1234567890', через цикл сложить все цифры этого числа.
 let str = '12346';
-let num = Number(str);
 
 function getSum() {
   for (var i = 0; i < str.length; i++) {
@@ -125,46 +124,63 @@ function getSum() {
 /*const kettle = {
   manufacturer: "Bosch",
   model: "TWK3A013",
-  "date of manufacture": 2021,
-  "guarantee period": 2,
+  dateOfManufacture: 2021,
+  guaranteePeriod: 2,
   color: "black",
   height: 23,
   capacity: 1.7,
-  condition: "isOn",
-  "condition kettle": "isOff",
-  "how many times turned on": 5
-};
-function onKettle() {
-  console.log(this.condition);
-}
-kettle.onKettle();
+  isOn: true,
+  amountOfUsageTimes: 0,
 
-function offKettle() {
-  console.log(kettle["condition kettle"]);
-}
-kettle.offKettle();
+  turnOn() {
+    console.log(isOn);
+    console.log(this.amountOfUsageTimes);
 
-function getData() {
-  console.log(kettle);
-}
 
-delete kettle["how many times turned on "];
-console.log(kettle);*/
+    if (this.isOn) {
+      return;
+    }
+
+    this.isOn = true;
+    this.amountOfUsageTimes++;
+    console.log(this.amountOfUsageTimes);
+  },
+
+  turnOff() {
+    this.isOn = false;
+    console.log(this.isOn);
+  }
+
+  clean() {
+    this.amountOfUsageTimes = 0;
+  }
+
+  getamountOfUsageTimes() {
+    console.log(this.isOn);
+
+    return this.amountOfUsageTimes;
+  }
+};*/
+kettle.turnOn();
+kettle.turnOff();
+kettle.clean();
+kettle.amountOfUsageTimes();
 
 
 //Реализуйте класс Employee (Работник), который будет иметь свойства: firstname (имя),  lastname (фамилия), rate (ставка за день работы), workDays (количество отработанных дней). Также класс должен иметь метод getCurrentSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
-const Employee = {
+/*const Employee = {
   firstname: "Dasha",
   lastname: "Eide",
   rate: 5,
   workDays: 24
-}
 
-Employee = {
+  Employee = {
   getCurrentSalary() {
     console.log(this.rate * this.workDays);
   }
 }
+}
+
 
 const worker = new Employee('Nastya', 'Petrova', 6, 25);
 
@@ -172,8 +188,16 @@ console.log(Employee.firstname);
 console.log(Employee.lastname);
 console.log(Employee.rate);
 console.log(Employee.workDays);
-console.log(Employee.getCurrentSalary());
+console.log(Employee.getCurrentSalary());*/
 
+//написать цикл for с перебором массива, на каждую этерацию выводить номер итерации (от 0 до 10 и от 10 до 0)
+const num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (let i = 0; i < num.length; i++) {
+    console.log(num[i]);
+  }
 
-
+  /*const num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (let i = num.length - 1; i >= 0; --i) { 
+    console.log(num[i]);
+  }*/
 
