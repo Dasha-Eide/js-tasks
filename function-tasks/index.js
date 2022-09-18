@@ -17,18 +17,19 @@ function calcAreaSquare(a) {
 }*/
 
 //Написать функцию, получающую на вход два числа. Если оба числа чётные - функция возвращает их произведение. Если оба числа нечётные - функция возвращает их сумму. Если одно из чисел чётное, а второе нечётное - функция возвращает это нечётное число.
-const a = a % 2;
-function getSum(a,b) {
-  if (!(a) && !(b % 2)) {
+/*function getSum(a,b) {
+  const divisionReminderA = a % 2;
+  const divisionReminderB = b % 2;
+  if (!(a % 2) && !(b % 2)) {
     return a * b;
-  } else if ((a) && (b % 2)) {
+  } else if ((a % 2) && (b % 2)) {
     return a + b;
-} else if (!(a) || (b % 2)) {
+} else if (!(a % 2) || (b % 2)) {
   return b;
-} else if (!(b % 2) || (a)) {
+} else if (!(b % 2) || (a % 2)) {
   return a;
 }
-}
+}*/
 
 
 
@@ -49,10 +50,14 @@ function getSum(a,b) {
   console.log('amount', amount)
     for (let i = 0; i < amount; i++) {
       console.log('create circle №', i + 1);
+      const circle = document.createElement('div');
+      circle.className = "circle";
+      console.log(circle);
+      document.body.appendChild(circle)
     }
 }
 
-createRedCircles(5);*/
+createRedCircles(10);*/
 
 //Задачи на аргументы 
 //Напишите функцию, которая принимает произвольное количество аргументов в виде строк и выводит их через пробел с помощью document.write() в тело html-документа. Например, функция  showWords("I've", "been", "learning", "JavaScript", "for", "a", "month") должна вывести фразу "I've been learning JavaScript for a month".
@@ -111,14 +116,13 @@ complexDigit(1, 9, 4, 8, 3);*/
 complexDigit(1, 9, 4, 8, 3);*/
 
 //Задача. Есть строка '12346' или '123' или '1234567890', через цикл сложить все цифры этого числа.
-let str = '12346';
-
-function getSum() {
-  for (var i = 0; i < str.length; i++) {
-    sum += (str[i]);
+/*function getSum() {
+  let str = '12346';
+  for (let i = 0; i < str.length; i++) {
+    sum += str[i];
     console.log(sum);
   }
-}
+}*/
 
 //создать обьект чайник. У него должны быть свойства: модель/производитель, дата производства, срок годности, срок гарантии, цвет, высота, вместимость (сами решаете это число/строка или обьект) и СОСТОЯНИЕ (включен или выключен - isOn) , сколько раз уже включали чайник и  3 метода - включить чайник, выключить чайник, вывести данные о чайнике и очистить данные (очистка значения, сколько раз чайник был включен)
 /*const kettle = {
@@ -160,44 +164,40 @@ function getSum() {
 
     return this.amountOfUsageTimes;
   }
-};*/
+};
 kettle.turnOn();
 kettle.turnOff();
 kettle.clean();
-kettle.amountOfUsageTimes();
+kettle.amountOfUsageTimes();*/
 
 
 //Реализуйте класс Employee (Работник), который будет иметь свойства: firstname (имя),  lastname (фамилия), rate (ставка за день работы), workDays (количество отработанных дней). Также класс должен иметь метод getCurrentSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
-/*const Employee = {
+const employee = {
   firstname: "Dasha",
   lastname: "Eide",
   rate: 5,
-  workDays: 24
-
-  Employee = {
-  getCurrentSalary() {
-    console.log(this.rate * this.workDays);
+  workDays: 24,
+  getCurrentSalary: function() {
+  console.log(this.rate * this.workDays);
   }
-}
-}
+  }
+console.log(employee.firstname);
+console.log(employee.lastname);
+console.log(employee.rate);
+console.log(employee.workDays);
+console.log(employee.getCurrentSalary());
 
-
-const worker = new Employee('Nastya', 'Petrova', 6, 25);
-
-console.log(Employee.firstname);
-console.log(Employee.lastname);
-console.log(Employee.rate);
-console.log(Employee.workDays);
-console.log(Employee.getCurrentSalary());*/
+const worker = new employee('Nastya', 'Petrova', 6, 25);
 
 //написать цикл for с перебором массива, на каждую этерацию выводить номер итерации (от 0 до 10 и от 10 до 0)
-const num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+/*const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   for (let i = 0; i < num.length; i++) {
     console.log(num[i]);
+    console.log(i);
   }
 
-  /*const num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  /*const num = [5, 6, 7, 8, 9, 1, 2, 3, 4 , 5];
   for (let i = num.length - 1; i >= 0; --i) { 
     console.log(num[i]);
+    console.log(i);
   }*/
-
