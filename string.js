@@ -99,36 +99,39 @@ console.log(changeLetterRegister(str));*/
 
 
 //11.Напишите функцию compareStrings(str1, str2), которая сравнивает строки без учёта регистра символов.
-/*const str1 = 'string';
-const str2 = 'JavaScript';
-const compareStrings = (str1, str2) => {
-console.log(str1 === 'StRiNg');
-console.log(str2 === 'JavaScriptonite');
+/*const compareStrings = (str1, str2) => {
+  const result = str1.toUpperCase() === str2.toUpperCase();
+  console.log(result);
 }
-compareStrings();*/
+console.log(compareStrings('string', 'StRiNg'));
+console.log(compareStrings('JavaScript', 'JavaScriptonite'));*/
 
-//12. Напишите функцию repeatStr(str, n), которая вовращает строку повторяемую определённое количество раз. 
-// сначала реализовать черед метод repeat, потом самим через циклы
-/*const repeatStr = (str, n = 5) => str.repeat(n)
-console.log(repeatStr('Hello'));*/
+//12. Напишите функцию repeatStr(str, n), которая вовращает строку повторяемую определённое количество раз.
+// сначала реализовать черед метод repeat, потом самим через циклы 
+/*let str = '';
+const repeatStr = (str, n = 2) => {
+  return str.repeat(n);
+}
 
-/*const repeatStr = (str, n = 5) => {
-  for (let i = 0; i < n; i++) {
-    console.log(repeatStr[i]);
-    console.log("hello");
-  }
-}*/
+console.log(repeatStr('',));*/
+
+/*function repeatStr(str, n) {
+  const newStr = '';
+  while (n-- > 0) newStr += str;
+  return newStr;
+}
+
+document.writeln(repeatStr('Hello!', 2));*/
 
 //13. Напишите функцию getPathname(pathname), которая находит имя файла (подстрока после последнего символа "\" ) из полного пути к файлу.
 /*const pathname = "/home/user/landing/index.js";
 
 const getPathname = (pathname) => { 
-  if (pathname.indexOf('index.js') != -1) {
-    console.log('index.js');
-  }
+  const name = pathname.split("/").pop();
+  return name;
 };
 
-  getPathname(pathname);*/
+  console.log(getPathname(pathname));*/
 
 
 //14. Напишите функцию getSubstring(str, char, pos), которая возвращает часть строки, расположенную после или до указанного символа char в зависимости от параметра pos.
@@ -153,7 +156,7 @@ getSubstring(str, 'язык', 'before');*/
 
 //Задачи на массивы
 //0. С помощью цикла for сформируйте строку '123456789' и запишите ее в переменную str.
-/*const str = ['123456789'];
+/*const str = '123456789';
 for (i = 0; i < str.length; i++) {
   document.write(str[i]);
 }*/
@@ -279,11 +282,11 @@ console.log(getStr('hello'));*/
 
 //16. Проверьте, что строка начинается на http://.
 /*const str = 'http://zara.com';
-console.log(str.indexOf('http://'));*/
+console.log(str.startsWith('http://'));*/
 
 //17. Проверьте, что строка заканчивается на .html
 /*const str = 'index.html';
-console.log(str.indexOf('.html'));*/
+console.log(str.endsWith('.html'));*/
 
 //18. Дан массив с числами. Проверьте, что в этом массиве есть число 5. Если есть - выведите 'да', а если нет - выведите 'нет'.
 /*const numbers = [1, 2, 5, 7, 9];
@@ -301,10 +304,15 @@ for (let i = 2; i < num; i++) {
 }*/
 
 //20. Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть - выведите 'да', а если нет - выведите 'нет'
-/*const num = [1345];
-if (num.indexOf(22)) {
-  console.log('No');
-}*/
+/*const numbers = [1, 3, 3, 5, 7, 22];
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] === numbers[i-1]) {
+    console.log('true');
+  } else {
+    console.log('false');
+  }
+ }*/
+
 
 //21. Заполните массив следующим образом: в первый элемент запишите '1', во второй '22', в третий '333' и так далее (два цикла)
 /*const num = [];
@@ -317,13 +325,22 @@ for (let i = 0; i <= 9; i++) {
 
 //22. Дан массив чисел, найдите в нем максимальное число
 /*const numbers = [1, 2, 3, 50, 120];
-const max = Math.max.apply(null, numbers);
+const max = numbers[0];
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > max) { 
+  max = numbers[i];
+}
 console.log(max);*/
 
 //23. Дан массив чисел, найдите в нем минимальное число
 /*const numbers = [10, 5, 20, 15, 100];
-const min = Math.min.apply(null, numbers);
+const max = numbers[0];
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] < min) { 
+  min = numbers[i];
+}
 console.log(min);*/
+
 
 //24. Дан массив чисел, найдите среднее арифметическое всех чисел
 /*const num = [1, 2, 3, 7, 6, 7, 8, 9];
@@ -342,9 +359,7 @@ console.log(result);*/
 * @param {?} value - значение для массива
 * @returns {Array}*/
 
-/*const fill = (arraySize, value) => {
-return new Array(arraySize).fill(value);
-}
+/*const fill = (arraySize, value) => Array(arraySize).fill(value);
 console.log(fill(3, 'a'));*/
 
 //26. Reverse. Напишите функцию, которая разворачивает массив в обратном порядке. Пожалуйста, не используйте array.reverse(), чтобы сделать задачу более интересной.
@@ -355,8 +370,8 @@ console.log(fill(3, 'a'));*/
 * @returns {Array}*/
 
 /*const reverse = (array) => {
-  for (let i = 0, d = array.length - 1; i < d; i++, d--) {
-    [array[i], array[d]] = [array[d], array[i]];
+  for (let i = 0, j = array.length - 1; i < j; i++, j--) {
+    [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 };
@@ -423,10 +438,7 @@ console.log(without(data, 1, 2));*/
 * @param {Array<string | number>} array - Массив с примитивными значениями
 * @returns {Array}
 */
-/*const unique = (array) => {
-  const uniqSet = new Set(array);
-  return [...uniqSet];
-}
+/*const unique = (array) => new Set(array);
 
 const data = [1, 2, 1, 2, 3];
 console.log(unique(data));*/
@@ -455,3 +467,158 @@ const arr4 = [1, 2, 3, 4, 5];
 console.log(isEqual(arr1, arr2));
 console.log(isEqual(arr1, arr3));
 console.log(isEqual(arr1, arr4));*/
+
+//32.Flatten. Напишите функцию, которая преобразует глубокий массив в одномерный. Пожалуйста, не используйте array.flat(), чтобы сделать задачу интереснее. (рекурсия)
+/* Описание задачи: Напишите функцию, которая преобразует глубокий массив в одномерный.
+* Ожидаемый результат: [1, 2, [3, 4, [5]]] => [1, 2, 3, 4, 5]
+* Сложность задачи: 3 of 5
+* @param {Array} array - Глубокий массив
+* @returns {Array}*/
+
+/*const flatten = (array) => {
+
+} 
+
+const data = [1, 2, [3, 4, [5]]];
+console.log(flatten(data)); // [1, 2, 3, 4, 5]*/
+
+//33. Chunk. Напишите функцию, которая разделяет массив на части заданного размера.
+
+/* Описание задачи: Напишите функцию, которая разделяет массив на части заданного размера.
+* Ожидаемый результат: ([1, 2, 3, 4, 5], 2) => [[1, 2], [3, 4], [5]]
+* Сложность задачи: 3 of 5
+* @param {Array} array - Массив элементов
+* @param {number} size - Размер чанков
+* @returns {Array}*/
+
+/*const chunk = (array, size) => {
+  const chunkArr = [];
+  let index = 0;
+  while (index < array.length) {
+    chunkArr.push(array.slice(index, size + index));
+    index += size;
+  }
+  return chunkArr;
+};
+
+const data = [1, 2, 3, 4, 5, 6, 7];
+console.log(chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7]]
+console.log(chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7]]*/
+
+//34. Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+/*const numbers = [[1, 2, 3], [4, 5], [6]];
+const sum = numbers.flat(Infinity).reduce((acc, val) => acc + val, 0);
+
+console.log(sum);*/
+
+//35. Дан массив с числами. Создайте из него новый массив, где останутся лежать только положительные числа. Создайте для этого вспомогательную функцию isPositive(), которая параметром будет принимать число и возвращать true, если число положительное, и false - если отрицательное.
+/*const data = [1, 3, 5, -5, -3, -1];
+const isPositive = (num) => {
+  if (num >= 0) {
+    return true;
+  }else {
+    return false;
+  }
+}
+
+const newData = [];
+for (let i = 0; i <= data.length; i++) {
+	if (isPositive(data[i])) {
+		newData.push(data[i]);
+	}
+}
+
+console.log(newData);*/
+
+//Рукурсия
+//1. Дан массив с числами. Выведите последовательно его элементы используя рекурсию и не используя цикл.
+/*const numbers = [1, 3, 5, 7, 22, 33];
+const getNumbers = (i) => {
+  console.log(numbers[i++]);
+  if (i < numbers.length) {
+    getNumbers(i);
+  }
+}
+getNumbers(0);*/
+
+// 2. Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры. И так, пока сумма не станет однозначным числом (9 и менее).
+/*const num = 1649;
+const getSum = (num) => {
+    if (num === 0) return 0;
+    return (num - 1) % 9 + 1;
+}
+
+console.log(getSum(num));*/
+
+//алгоритмы сортировок
+//1.есть массив [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3].отсортировать по возрастанию написав алгоритм сортировки вставками.
+/*const numbers = [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3];
+const insertionSort = (numbers) => {
+  for (let i = 1, l = numbers.length; i < l; i++) {
+      const current = numbers[i];
+      let j = i;
+      while (j > 0 && numbers[j - 1] > current) {
+          numbers[j] = numbers[j - 1];
+          j--;
+      }
+      numbers[j] = current;
+  }
+  console.log(numbers);
+};
+insertionSort(numbers);*/
+
+//2.Задание: есть массив [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3] отсортировать по возрастанию(1) и по убыванию(2) написав алгоритм сортировки пузырьком.
+//по возрастанию
+/*const numbers = [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3];
+const bubbleSort = (numbers) => {
+  for (let i = 0; i < numbers.length; i++) {
+      for (let j = 0; j < numbers.length; j++) {
+          if (numbers[j] > numbers[j + 1]) {
+              const exchange = numbers[j];
+              numbers[j] = numbers[j + 1];
+              numbers[j + 1] = exchange;
+          }
+      }
+  }
+  console.log(numbers);
+}
+bubbleSort(numbers);*/
+//по убыванию 
+/*const numbers = [5, 12, 2, 7, 6, 9, 19, 25, 4, 1, 3];
+  const bubbleSort = (numbers) => {
+    for (let i = 0; i < numbers.length; i++) {
+      for (let j = 0; j < numbers.length; j++) {
+          if (numbers[j] < numbers[j + 1]) {
+              const exchange = numbers[j];
+              numbers[j] = numbers[j + 1];
+              numbers[j + 1] = exchange;
+          }
+      }
+  }
+  console.log(numbers);
+}
+bubbleSort(numbers);*/
+
+//бинарный поиск 
+/*const numbers = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 24];
+const count = 0;
+const binarySearch = (numbers, key) => {
+  const start = 0;
+  const end = numbers.length;
+  const found = false;
+  const position = -1;
+
+  while (found === false && start <= end) {
+      const middle = Math.floor((start + end) / 2);
+
+      if (numbers[middle] === key) {
+          return position;
+      } else if (numbers[middle] < key) {
+          start = middle + 1;
+      } else {
+          end = middle - 1;
+      }
+  }
+  return position;
+}
+console.log(binarySearch(numbers, 13));*/
